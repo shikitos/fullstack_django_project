@@ -1,5 +1,46 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+    max-width: 100%;
+
+}
+
+/*=============================================== NAVBAR========================================*/
+
+.navbar-btn {
+    justify-content: flex-end;
+    display: flex;
+}
+
+.navbar-btn > a {
+    width: 98px;
+    margin-right: 25px;
+}
+
 .navbar-logo {
     text-align:center;
     color:#fff;
     margin-left: 25px;
+}
+
+.wrapper {
+    min-height: 100%;
+    margin-bottom: -50px;
+}
+
+.footer, .push {
+    height: 50px;
+    font-size: 13px;
+}
+
+.footer > div > a {
+    text-decoration: none;
+    color: #8dcaf0;
+}
+
+/* LOGIN */
+.btn-enter {
+    width: 90px;
+
 }

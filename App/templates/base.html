@@ -1,15 +1,13 @@
-{% load static %}
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!-- Favicon -->
-    <!--    <link rel="shortcut icon" href="{% static 'img/favicon.ico' %}" />-->
     <!-- Logo -->
-    <link rel="shortcut icon" type="image/x-icon" href="{% static 'img/logo.png' %}" />
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'img/logo.png/' %}" />
     <!-- Static CSS -->
     <link rel="stylesheet" href="{% static 'css/style.css' %}" />
     <!-- Bootstrap CSS only -->
@@ -24,24 +22,32 @@
         <header>
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
                 <div class="cos-sm">
-                    <a href="" class="navbar-logo navbar-brand flex-grow-1">
-                        <em class="fas fa-briefcase-medical"></em>&nbsp; Mastery Hospital
+                    <a href="{% url 'frontend' %}" class="navbar-logo navbar-brand flex-grow-1">
+                        {% block navbar-content %}
+                            <em class="fas fa-briefcase-medical"></em>&nbsp; Mastery Hospital
+                        {% endblock navbar-content %}
                     </a>
                 </div>
-                <div class="col-sm">
-                    <a href="#" class="btn btn-outline-info btn-sm border-light" id="btn-nav">Login</a>
+                <div class="col-sm navbar-btn">
+                    {% block btn-nav %}
+                    <a href="{% url 'backend' %}" class="btn btn-outline-info btn-sm border-light">Login</a>
+                    {% endblock btn-nav %}
                 </div>
             </nav>
         </header>
-
-        {% block content%}{% endblock content%}
+    {% block content%}{% endblock content%}
 
 
     </div>
 
-    <!-- FOOTER -->
-    <footer>
 
+    <!-- FOOTER -->
+    <footer class="bg-dark text-center text-lg-start text-light footer">
+        <div class="text-center p-3">
+            Copyright &copy; {% now "Y" %} <span>All rights reserved</span> | Made with
+            <em class="text-danger fas fa-heartbeat"></em> by
+            <a href="">Shikitos</a>
+        </div>
     </footer>
 
     <!-- Bootstrap -->

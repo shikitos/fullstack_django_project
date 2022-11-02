@@ -1,5 +1,11 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content%}
-    <h1 class="text-primary text-center">Frontend page</h1>
+<style>
+    body {
+        background: url("{% static 'img/background.jpg' %}") no-repeat center 0;
+        background-size: cover;
+    }
+</style>
 {% endblock content%}
